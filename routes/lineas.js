@@ -14,6 +14,19 @@ router.get('/linea-vehiculos', async (req, res) =>{
 
 })
 
+// Consulta pos id de marca
+router.get('/linea-vehiculos/:id/marca-vehiculo', async (req, res) =>{
+  try {
+      const {id} = req.params;
+      const [result] = await connection.query(`SELECT * FROM linea_vehiculos WHERE id_marca_vehiculos =${id} ;`);
+      return res.status(200).json(result);
+  } catch (error) {
+      console.log(error);
+      res.status(500).json({error: 'Internal server error'});
+  }
+
+})
+
 // Method POST
 router.post('/linea-vehiculos', async (req, res) =>{
     try {
