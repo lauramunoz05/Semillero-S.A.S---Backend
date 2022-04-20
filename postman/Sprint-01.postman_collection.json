@@ -1,0 +1,335 @@
+{
+	"info": {
+		"_postman_id": "38ca94d5-5f5c-4096-8207-acfcd3acc43a",
+		"name": "Sprint-01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Marca_Vehiculos",
+			"item": [
+				{
+					"name": "marca_vehiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sprint-01-semillero-sas.herokuapp.com/api/marca-vehiculos",
+							"protocol": "https",
+							"host": [
+								"sprint-01-semillero-sas",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"marca-vehiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "marca_vehiculos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Audi\",\r\n    \"descripcion\": \"Audi es una empresa multinacional alemana fabricante de automóviles de alta gama y deportivos\",\r\n    \"activo\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sprint-01-semillero-sas.herokuapp.com/api/marca-vehiculos",
+							"protocol": "https",
+							"host": [
+								"sprint-01-semillero-sas",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"marca-vehiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "marca_vehiculos",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"activo\": \"S\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sprint-01-semillero-sas.herokuapp.com/api/marca-vehiculos/1",
+							"protocol": "https",
+							"host": [
+								"sprint-01-semillero-sas",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"marca-vehiculos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "marca_vehiculos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:500/api//marca-vehiculos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"",
+								"marca-vehiculos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Linea_vehiculos",
+			"item": [
+				{
+					"name": "linea_vehiculos por id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:500/api/linea-vehiculos/68",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"linea-vehiculos",
+								"68"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linea_vehiculos por id de lamarca",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:500/api/linea-vehiculos/18/marca-vehiculo",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"linea-vehiculos",
+								"18",
+								"marca-vehiculo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linea_vehiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://sprint-01-semillero-sas.herokuapp.com/api/linea-vehiculos",
+							"protocol": "https",
+							"host": [
+								"sprint-01-semillero-sas",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"linea-vehiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linea_vehiculos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n    \"id_marca_vehiculos\": 18,\r\n    \"nombre\": \"Audi A1\",\r\n    \"descripcion\": \"\",\r\n    \"activo\": \"S\"\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://sprint-01-semillero-sas.herokuapp.com/api/linea-vehiculos",
+							"protocol": "https",
+							"host": [
+								"sprint-01-semillero-sas",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"linea-vehiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "linea_vehiculos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:500/api/linea-vehiculos/2",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"linea-vehiculos",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vehiculos",
+			"item": [
+				{
+					"name": "vehiculos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:500/api/vehiculos",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"vehiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehiculos",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\": \"BNl123\",\r\n    \"id_linea_vehiculos\": 66,\r\n    \"modelo\": \"1998\",\r\n    \"fecha_vencimiento_seguro\": \"2022-09-07\",\r\n    \"fecha_vencimiento_tecnomecanica\": \"2022-09-07\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:500/api/vehiculos",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"vehiculos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehiculos",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"placa\": \"GBK123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:500/api/vehiculos/BNG123",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"vehiculos",
+								"BNG123"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "vehiculos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:500/api/vehiculos/BNl123",
+							"host": [
+								"localhost"
+							],
+							"port": "500",
+							"path": [
+								"api",
+								"vehiculos",
+								"BNl123"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

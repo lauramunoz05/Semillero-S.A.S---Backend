@@ -14,6 +14,19 @@ router.get('/marca-vehiculos', async (req, res) =>{
 
 })
 
+// consulta por id
+router.get('/marca-vehiculos/:id', async (req, res) =>{
+  try {
+      const {id} = req.params;
+      const [result] = await connection.query(`SELECT * FROM marca_vehiculos WHERE id = ${id} ;`);
+      return res.status(200).json(result);
+  } catch (error) {
+      console.log(error);
+      res.status(500).json({error: 'Internal server error'});
+  }
+
+})
+
 // Method POST
 router.post('/marca-vehiculos', async (req, res) =>{
     try {
@@ -23,7 +36,8 @@ router.post('/marca-vehiculos', async (req, res) =>{
                 VALUES(?, ?, ?);
             `, Object.values(req.body)); // para ponerlos valores en los campos que tienen '?'
     
-        return res.status(200).json('Se agrego correctamente');
+            const [result] = await connection.query(`SELECT * FROM marca_vehiculos;`);
+            return res.status(200).json(result);
       } catch (error) {
           console.log(error);
           const {nombre, descripcion, activo} = req.body;
@@ -57,7 +71,8 @@ router.patch("/marca-vehiculos/:id", async (req, res) => {
       });
   
       await connection.query(`UPDATE marca_vehiculos SET ${fieldsQuery.join()} WHERE id = ${id}`);
-      res.status(200).json('El campo se actualizo correctamente');
+      const [result] = await connection.query(`SELECT * FROM marca_vehiculos;`);
+      return res.status(200).json(result);
   
     } catch (error) {
         const {nombre, activo} = req.body;
@@ -82,8 +97,8 @@ router.delete('/marca-vehiculos/:id', async (req, res) => {
     try {
       const {id} = req.params;
       await connection.query(`DELETE FROM marca_vehiculos WHERE id = ${id} `);
-      res.status(200).json('Registro eliminado correctamente');
-      
+      const [result] = await connection.query(`SELECT * FROM marca_vehiculos;`);
+      return res.status(200).json(result);
     } catch (error) {
       console.log(error);
       res.status(500).json({ error: "Internal server error!" });
